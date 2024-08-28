@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -9,7 +10,8 @@ class IndexController extends Controller
     public function display()
     {
         // index vanne view lai return gardiyo
-        return view('index');
+        $students = Student::all();
+        return view('index', compact('students'));
     }
 
     public function showForm()

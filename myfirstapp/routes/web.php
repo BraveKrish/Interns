@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +30,7 @@ Route::get('/', function () {
 // route for index view
 Route::get('/index', [IndexController::class, 'display']);
 Route::get('/myform', [IndexController::class, 'showForm']);
-Route::post('/submit', [IndexController::class, 'submit']);
+// Route::post('/submit', [IndexController::class, 'submit']);
+
+Route::get('/create/student', [StudentController::class, 'createStudent'])->name('create'); // create is route name here
+Route::post('store/student', [StudentController::class, 'store'])->name('store.student');

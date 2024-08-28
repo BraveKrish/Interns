@@ -12,7 +12,8 @@
 
 <body>
     <div class="container">
-        <form action="{{ url('/submit') }}" method="POST">
+        {{-- <form action="{{ url('store/student') }}" method="POST"> --}}
+        <form action="{{ route('store.student') }}" method="POST">
             <div class="mb-3 mt-5">
                 {{-- token i.e csrf token --}}
                 @csrf
